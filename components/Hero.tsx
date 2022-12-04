@@ -10,7 +10,7 @@ export const Hero = (props: Props) => {
 			<Image src={hero} alt="baneer" fill className="object-cover" />
 
 			<div className="absolute top-1/2 w-full text-center">
-				<p className="text-sm sm:text-lg uppercase font-bold text-lg">
+				<p className="text-sm sm:text-lg uppercase font-bold ">
 					Experience what the world has to offer
 				</p>
 
