@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Destinations } from "../components/Destination";
 import { Explore } from "../components/Explore";
+import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Hero } from "../components/Hero";
 import { Inspire } from "../components/Inspire";
@@ -13,8 +14,8 @@ export default function Home() {
 				<title>Find My Hotel</title>
 			</Head>
 
+			<Navbar />
 			<main>
-				<Navbar />
 				<Hero />
 				<Destinations />
 				<Explore />
@@ -24,6 +25,7 @@ export default function Home() {
 					buttonText="Get Inspired"
 				/>
 			</main>
+			<Footer />
 		</div>
 	);
 }
