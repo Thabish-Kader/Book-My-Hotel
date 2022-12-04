@@ -1,16 +1,15 @@
-type SmallCardProps = {
+type DestinationCardProps = {
 	img: string;
 	location: string;
 	distance: string;
 };
 
-type MediumCardProps = {
+type ExploreCardProps = {
 	img: string;
 	title: string;
 };
 
-type LargeCardsProps = {
-	img: string;
+type InspireProps = {
 	title: string;
 	description: string;
 	buttonText: string;

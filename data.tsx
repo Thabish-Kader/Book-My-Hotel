@@ -43,19 +43,19 @@ export const exploreData = [
 
 export const liveAnywhere = [
 	{
-		img: "https://links.papareact.com/2io",
-		title: "Outdoor getaways",
+		img: "https://img.sunset02.com/sunsetm/wp-content-uploads/2019-03-20UTC10/farmhouse-fixer-upper-mcafees-sun-59790-0918-1200x900.jpg",
+		title: "Farm House",
 	},
 	{
-		img: "https://links.papareact.com/q7j",
-		title: "Unique stays",
+		img: "https://hips.hearstapps.com/hbu.h-cdn.co/assets/16/43/1477500272-overwater-bungalows.jpg",
+		title: "Outdoor House",
 	},
 	{
-		img: "https://links.papareact.com/s03",
-		title: "Entire homes",
+		img: "https://blog.newhomesource.com/wp-content/uploads/2020/05/suburban-rural-house-min.jpg",
+		title: "Rural Homes",
 	},
 	{
-		img: "https://links.papareact.com/8ix",
-		title: "Pet allowed",
+		img: "https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2019/4/17/0/HUHH2019-Escape_Fall-City-WA_19.jpg.rend.hgtvcom.966.725.suffix/1555507098172.jpeg",
+		title: "Exclusive Homes",
 	},
 ];
