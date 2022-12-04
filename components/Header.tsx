@@ -8,7 +8,7 @@ type Props = {};
 
 export const Header = (props: Props) => {
 	return (
-		<header className="sticky top-0 z-50 grid grid-cols-3 bg-white shadow py-5 px-5 md:px-10">
+		<nav className="sticky top-0 z-50 grid grid-cols-3  py-5 px-5 md:px-10">
 			{/* left */}
 			<div className="flex items-center">
 				<FaHotel size={30} className="text-green-500" />
@@ -36,6 +36,6 @@ export const Header = (props: Props) => {
 					<BsFillPersonFill size={30} />
 				</div>
 			</div>
-		</header>
+		</nav>
 	);
 };
