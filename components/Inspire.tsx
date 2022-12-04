@@ -8,7 +8,10 @@ export const Inspire: FC<InspireProps> = ({
 	buttonText,
 }) => {
 	return (
-		<section className="max-w-7xl mx-auto relative py-16 cursor-pointer">
+		<section
+			id="inspire"
+			className=" snap-center  relative py-16 cursor-pointer"
+		>
 			<Image
 				src={Inspireimg}
 				alt="/img"

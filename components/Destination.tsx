@@ -5,7 +5,7 @@ type Props = {};
 
 export const Destinations = (props: Props) => {
 	return (
-		<section className="pt-6 max-w-7xl mx-auto px-8 sm:px-16">
+		<section id="destinations" className="snap-center pt-6  px-8 sm:px-16">
 			<h2 className="text-4xl font-semibold pb-5">Destinations</h2>
 
 			{/* Pull some data from server  */}

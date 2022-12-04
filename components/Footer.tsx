@@ -4,7 +4,10 @@ type Props = {};
 
 export const Footer = (props: Props) => {
 	return (
-		<footer className="grid grid-cols-1 md:grid-cols-4  px-32 py-14 gap-y-10 bg-gray-100">
+		<footer
+			id="footer"
+			className="snap-end grid grid-cols-1 md:grid-cols-4  px-32 py-14 gap-y-10 bg-gray-100"
+		>
 			<div className="space-y-4 text-xs text-gray-800">
 				<h5 className="font-bold">LEARN</h5>
 				<p>How We Operate</p>

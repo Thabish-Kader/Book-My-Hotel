@@ -6,7 +6,10 @@ type Props = {};
 
 export const Hero = (props: Props) => {
 	return (
-		<section className="relative h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] 2xl:h-[700px]">
+		<section
+			id="hero"
+			className="snap-center relative h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] 2xl:h-[700px]"
+		>
 			<Image src={hero} alt="baneer" fill className="object-cover" />
 
 			<div className="absolute top-1/2 w-full text-center">

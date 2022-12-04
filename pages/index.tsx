@@ -9,14 +9,14 @@ import { Navbar } from "../components/Navbar";
 
 export default function Home() {
 	return (
-		<div>
+		<div className="h-screen scroll-smooth snap-y snap-mandatory overflow-scroll">
 			<Head>
 				<title>Find My Hotel</title>
 			</Head>
 
 			<Navbar />
-			<main>
-				<Hero />
+			<Hero />
+			<main className="max-w-7xl mx-auto">
 				<Destinations />
 				<Explore />
 				<Inspire

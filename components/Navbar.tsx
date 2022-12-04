@@ -5,8 +5,8 @@ import { AiFillCloseCircle } from "react-icons/ai";
 
 export const Navbar = () => {
 	const [nav, setNav] = useState<boolean>(false);
-	const [bgColor, setBgColor] = useState<string>("transparen");
-	const [textclr, setTextclr] = useState<string>("white");
+	const [bgColor, setBgColor] = useState<string>("white");
+	const [textclr, setTextclr] = useState<string>("black");
 
 	const changeColor = () => {
 		if (window.scrollY >= 100) {
@@ -41,19 +41,19 @@ export const Navbar = () => {
 					className="text-l hidden sm:flex"
 				>
 					<li className="p-4">
-						<Link href="/">Home</Link>
+						<Link href="/#hero">Home</Link>
 					</li>
 					<li className="p-4">
-						<Link href="/#properties">Properties</Link>
+						<Link href="/#destinations">Destinations</Link>
 					</li>
 					<li className="p-4">
-						<Link href="/#available">Availaible</Link>
+						<Link href="/#explore">Explore</Link>
 					</li>
 					<li className="p-4">
-						<Link href="/#contact">Contact</Link>
+						<Link href="/#inspire">Inspire</Link>
 					</li>
 					<li className="p-4">
-						<Link href="/about">About Us</Link>
+						<Link href="/#footer">About Us</Link>
 					</li>
 				</ul>
 
