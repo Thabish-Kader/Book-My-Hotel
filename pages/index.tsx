@@ -14,9 +14,9 @@ export default function Home() {
 				<title>Find My Hotel</title>
 			</Head>
 
-			<Navbar />
-			<Hero />
 			<main className="max-w-7xl mx-auto">
+				<Navbar />
+				<Hero />
 				<Destinations />
 				<Explore />
 				<Inspire

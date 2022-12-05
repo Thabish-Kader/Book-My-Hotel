@@ -2,11 +2,13 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { GoThreeBars } from "react-icons/go";
 import { AiFillCloseCircle } from "react-icons/ai";
+import { IoSearchCircle } from "react-icons/io5";
 
 export const Navbar = () => {
 	const [nav, setNav] = useState<boolean>(false);
 	const [bgColor, setBgColor] = useState<string>("white");
 	const [textclr, setTextclr] = useState<string>("black");
+	const [searchInput, setSearchInput] = useState<string>("");
 
 	const changeColor = () => {
 		if (window.scrollY >= 100) {
@@ -35,6 +37,21 @@ export const Navbar = () => {
 						La Masison
 					</h1>
 				</Link>
+
+				{/* search */}
+				<div className="hidden lg:flex flex-1 items-center mx-10 md:border-2 rounded-full  md:shadow-sm">
+					<input
+						value={searchInput}
+						onChange={(e) => setSearchInput(e.target.value)}
+						type="text"
+						className="pl-5 bg-transparent outline-none flex-grow text-sm text-gray-600 placeholder-gray-400"
+						placeholder="Start your search.."
+					/>
+					<IoSearchCircle
+						size={30}
+						className=" text-black cursor-pointer hidden md:inline-flex "
+					/>
+				</div>
 				{/* Links */}
 				<ul
 					style={{ color: `${textclr}` }}
