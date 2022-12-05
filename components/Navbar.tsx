@@ -3,6 +3,9 @@ import React, { useEffect, useState } from "react";
 import { GoThreeBars } from "react-icons/go";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { IoSearchCircle } from "react-icons/io5";
+import "react-date-range-ts/dist/styles.css"; // main style file
+import "react-date-range-ts/dist/theme/default.css"; // theme css file
+import { DateRangePicker } from "react-date-range-ts";
 
 export const Navbar = () => {
 	const [nav, setNav] = useState<boolean>(false);
@@ -20,9 +23,22 @@ export const Navbar = () => {
 		}
 	};
 
-	useEffect(() => {
-		window.addEventListener("scroll", changeColor);
-	});
+	const selectionRange = {
+		startDate: new Date(),
+		endDate: new Date(),
+		key: "selection",
+	};
+
+	const handleSelect = (ranges: any) => {
+		console.log(ranges);
+		// {
+		//   selection: {
+		//     startDate: [native Date Object],
+		//     endDate: [native Date Object],
+		//   }
+		// }
+	};
+
 	return (
 		<nav
 			style={{ backgroundColor: `${bgColor}` }}
@@ -52,6 +68,7 @@ export const Navbar = () => {
 						className=" text-black cursor-pointer hidden md:inline-flex "
 					/>
 				</div>
+
 				{/* Links */}
 				<ul
 					style={{ color: `${textclr}` }}
@@ -135,6 +152,14 @@ export const Navbar = () => {
 					</ul>
 				</div>
 			</div>
+			{searchInput && (
+				<div className="flex p-5 bg-transparent items-center justify-center mx-auto">
+					<DateRangePicker
+						ranges={[selectionRange]}
+						onChange={handleSelect}
+					/>
+				</div>
+			)}
 		</nav>
 	);
 };
