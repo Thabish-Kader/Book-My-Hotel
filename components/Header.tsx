@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { IoSearchCircle } from "react-icons/io5";
-import { FaBars, FaHotel } from "react-icons/fa";
+import { FaBars, FaHotel, FaUser } from "react-icons/fa";
 import { BsGlobe, BsFillPersonFill } from "react-icons/bs";
 import "react-date-range-ts/dist/styles.css"; // main style file
 import "react-date-range-ts/dist/theme/default.css"; // theme css file
@@ -11,8 +11,9 @@ type Props = {};
 
 export const Header = (props: Props) => {
 	const [searchInput, setSearchInput] = useState<string>("");
-	const [startDate, setStartDate] = useState(new Date());
-	const [endDate, setEndDate] = useState(new Date());
+	const [startDate, setStartDate] = useState<Date>(new Date());
+	const [endDate, setEndDate] = useState<Date>(new Date());
+	const [noOfGuest, setNoOfGuest] = useState<number | string>(1);
 
 	const selectionRange = {
 		startDate: startDate,
@@ -64,12 +65,35 @@ export const Header = (props: Props) => {
 				</div>
 			</div>
 			{searchInput && (
-				<div className=" p-4 mt-4 bg-gray-200 col-span-3 mx-auto">
+				<div className=" flex flex-col col-span-3 mx-auto bg-gray-200 p-4">
 					<DateRangePicker
 						ranges={[selectionRange]}
 						onChange={handleSelect}
 						minDate={new Date()}
 					/>
+					<div className="flex justify-between p-2">
+						<h1 className="font-bold">Number Of Guests</h1>
+						<div className="flex items-center space-x-2">
+							<FaUser />
+							<input
+								className="w-12 rounded-lg px-2"
+								type="number"
+								value={noOfGuest}
+								onChange={(e) => setNoOfGuest(e.target.value)}
+							/>
+						</div>
+					</div>
+					<div className="grid grid-cols-2 gap-2">
+						<button
+							onClick={() => setSearchInput("")}
+							className="bg-grey-500 border border-black p-2 rounded-lg font-semibold"
+						>
+							Cancel
+						</button>
+						<button className="bg-green-500 p-2 rounded-lg font-semibold">
+							Search
+						</button>
+					</div>
 				</div>
 			)}
 		</nav>
