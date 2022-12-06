@@ -1,4 +1,6 @@
+import { format, parseISO } from "date-fns";
 import { GetServerSideProps } from "next";
+import { useRouter } from "next/router";
 import React from "react";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
@@ -9,16 +11,29 @@ type Props = {
 };
 
 export default function Results({ locationResults }: Props) {
+	const {
+		query: { search, startDate, endDate, guest },
+	} = useRouter();
+
+	const formatedStartDate = format(
+		parseISO(startDate as string),
+		"dd-MMMM-yyyy"
+	);
+	const formatedEndDate = format(parseISO(endDate as string), "dd-MMMM-yyyy");
+
 	return (
 		<>
 			<Header />
 			<main className="p-4">
 				<div>
 					<div className="ml-6 lg:ml-10">
-						<p>06-December-2022</p>
+						<p>{`${formatedStartDate} - ${formatedEndDate}`}</p>
 						<h1 className="text-2xl font-bold">
-							Locations in Ohio
+							Locations in {search}
 						</h1>
+						<p className="text-sm text-gray-500">
+							Number of Guests: {guest}
+						</p>
 						{/* buttons */}
 						<div className="flex space-x-3 my-2">
 							<button className="results-button">
@@ -33,7 +48,7 @@ export default function Results({ locationResults }: Props) {
 						</div>
 					</div>
 
-					<div className="flex flex-col p-5 space-y-10">
+					<div className="flexflex-col p-5 space-y-10">
 						{/* locations cards */}
 						{locationResults.map((location, i) => (
 							<LocationCards

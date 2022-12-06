@@ -12,7 +12,7 @@ export const LocationCards = ({
 	total,
 }: LocationInfo) => {
 	return (
-		<div className="flex space-x-5 border-b hover:opacity-80 hover:shadow-lg hover:scale-105 transition transform duration-300 ease-out first:border-t py-2 lg:pr-8 lg:pl-2 cursor-pointer">
+		<div className="flex  space-x-5 border-b hover:opacity-80 hover:shadow-lg hover:scale-105 transition transform duration-300 ease-out first:border-t py-2 lg:pr-8 lg:pl-2 cursor-pointer">
 			{/* img */}
 			<div className="relative h-[200px] w-[300px] lg:h-[250px] lg:w-[350px]">
 				<Image

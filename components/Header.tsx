@@ -6,6 +6,7 @@ import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import Link from "next/link";
 import { DateRangePicker } from "react-date-range";
+import { useRouter } from "next/router";
 
 type Props = {};
 
@@ -15,6 +16,8 @@ export const Header = (props: Props) => {
 	const [endDate, setEndDate] = useState<Date>(new Date());
 	const [noOfGuest, setNoOfGuest] = useState<number | string>(1);
 
+	const router = useRouter();
+
 	const selectionRange = {
 		startDate: startDate,
 		endDate: endDate,
@@ -22,16 +25,31 @@ export const Header = (props: Props) => {
 	};
 
 	const handleSelect = (ranges: any) => {
-		console.log(ranges);
 		setStartDate(ranges.selection.startDate);
 		setEndDate(ranges.selection.endDate);
+	};
+
+	// function for searching locations -> pushes to results page
+	const searchLocation = () => {
+		router.push({
+			pathname: "/results",
+			query: {
+				search: searchInput,
+				startDate: startDate.toISOString(),
+				endDate: endDate.toISOString(),
+				guest: noOfGuest,
+			},
+		});
 	};
 
 	return (
 		<nav className="sticky bg-white top-0 z-50 grid grid-cols-3  py-5 px-5 md:px-10">
 			{/* left */}
-			<div className="flex items-center">
-				<FaHotel size={30} className="" />
+			<div
+				onClick={() => router.push("/")}
+				className="cursor-pointer flex items-center"
+			>
+				<FaHotel size={30} />
 				<h1 className="text-4xl font-bold hidden lg:inline-flex">
 					La Masison
 				</h1>
@@ -90,7 +108,10 @@ export const Header = (props: Props) => {
 						>
 							Cancel
 						</button>
-						<button className="bg-green-500 p-2 rounded-lg font-semibold">
+						<button
+							onClick={searchLocation}
+							className="bg-green-500 p-2 rounded-lg font-semibold"
+						>
 							Search
 						</button>
 					</div>
