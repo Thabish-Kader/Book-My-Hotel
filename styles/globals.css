@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+	.results-button {
+		@apply border p-2 rounded-full border-black px-3 active:scale-90 hover:scale-105 hover:shadow-md transition transform duration-200;
+	}
+}
