@@ -3,9 +3,6 @@ import React, { useEffect, useState } from "react";
 import { GoThreeBars } from "react-icons/go";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { IoSearchCircle } from "react-icons/io5";
-import "react-date-range-ts/dist/styles.css"; // main style file
-import "react-date-range-ts/dist/theme/default.css"; // theme css file
-import { DateRangePicker } from "react-date-range-ts";
 
 export const Navbar = () => {
 	const [nav, setNav] = useState<boolean>(false);
@@ -154,10 +151,10 @@ export const Navbar = () => {
 			</div>
 			{searchInput && (
 				<div className="flex p-5 bg-transparent items-center justify-center mx-auto">
-					<DateRangePicker
+					{/* <DateRangePicker
 						ranges={[selectionRange]}
 						onChange={handleSelect}
-					/>
+					/> */}
 				</div>
 			)}
 		</nav>

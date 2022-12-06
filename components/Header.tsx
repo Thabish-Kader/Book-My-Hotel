@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { IoSearchCircle } from "react-icons/io5";
 import { FaBars, FaHotel, FaUser } from "react-icons/fa";
 import { BsGlobe, BsFillPersonFill } from "react-icons/bs";
-import "react-date-range-ts/dist/styles.css"; // main style file
-import "react-date-range-ts/dist/theme/default.css"; // theme css file
+import "react-date-range/dist/styles.css";
+import "react-date-range/dist/theme/default.css";
 import Link from "next/link";
-import { DateRangePicker } from "react-date-range-ts";
+import { DateRangePicker } from "react-date-range";
 
 type Props = {};
 
@@ -86,7 +86,7 @@ export const Header = (props: Props) => {
 					<div className="grid grid-cols-2 gap-2">
 						<button
 							onClick={() => setSearchInput("")}
-							className="bg-grey-500 border border-black p-2 rounded-lg font-semibold"
+							className="bg-grey-500 border bg-black text-white border-black p-2 rounded-lg font-semibold"
 						>
 							Cancel
 						</button>
