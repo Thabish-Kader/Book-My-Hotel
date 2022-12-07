@@ -10,7 +10,7 @@ import { title } from "process";
 import { lastDayOfDecade } from "date-fns";
 
 type Props = {
-	searchResults: LocationInfo[];
+	searchResults?: LocationInfo[];
 };
 
 const markers = [

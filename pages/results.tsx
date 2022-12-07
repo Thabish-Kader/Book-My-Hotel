@@ -5,6 +5,7 @@ import React from "react";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { LocationCards } from "../components/locationCards";
+import { Maps } from "../components/Maps";
 
 type Props = {
 	locationResults: LocationInfo[];
@@ -24,8 +25,8 @@ export default function Results({ locationResults }: Props) {
 	return (
 		<>
 			<Header />
-			<main className="p-4">
-				<div>
+			<main className="flex p-4">
+				<section className="flex-grow pt-14 px-6 h-screen overflow-y-scroll">
 					<div className="ml-6 lg:ml-10">
 						<p>{`${formatedStartDate} - ${formatedEndDate}`}</p>
 						<h1 className="text-2xl font-bold">
@@ -65,7 +66,11 @@ export default function Results({ locationResults }: Props) {
 							/>
 						))}
 					</div>
-				</div>
+				</section>
+				{/* Maps */}
+				<section className="h-full w-[50%] hidden xl:inline-flex">
+					<Maps />
+				</section>
 			</main>
 			<Footer />
 		</>
