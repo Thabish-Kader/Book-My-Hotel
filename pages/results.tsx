@@ -69,7 +69,7 @@ export default function Results({ locationResults }: Props) {
 				</section>
 				{/* Maps */}
 				<section className="h-full w-[50%] hidden xl:inline-flex">
-					<Maps />
+					<Maps locationResults={locationResults} />
 				</section>
 			</main>
 			<Footer />
