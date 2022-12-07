@@ -19,7 +19,6 @@ export const Maps = () => {
 function Map() {
 	const context = useContext(Context);
 
-	// console.log(context);
 	// transforming the array to match the code from https://codesandbox.io/s/react-google-mapsapi-multiple-markers-infowindow-h6vlq?file=/src/Map.js:114-544
 	const markers = context?.map((location, i) => ({
 		id: i,
