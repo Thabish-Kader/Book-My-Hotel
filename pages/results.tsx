@@ -1,7 +1,7 @@
 import { format, parseISO } from "date-fns";
 import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { createContext, useState } from "react";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { LocationCards } from "../components/locationCards";
@@ -10,6 +10,8 @@ import { Maps } from "../components/Maps";
 type Props = {
 	locationResults: LocationInfo[];
 };
+
+export const Context = createContext([] as LocationInfo[]);
 
 export default function Results({ locationResults }: Props) {
 	const {
@@ -21,6 +23,8 @@ export default function Results({ locationResults }: Props) {
 		"dd-MMMM-yyyy"
 	);
 	const formatedEndDate = format(parseISO(endDate as string), "dd-MMMM-yyyy");
+
+	const [context, setContext] = useState<LocationInfo[]>(locationResults);
 
 	return (
 		<>
@@ -69,7 +73,9 @@ export default function Results({ locationResults }: Props) {
 				</section>
 				{/* Maps */}
 				<section className="h-full w-[50%] hidden xl:inline-flex">
-					<Maps locationResults={locationResults} />
+					<Context.Provider value={context}>
+						<Maps />
+					</Context.Provider>
 				</section>
 			</main>
 			<Footer />

@@ -1,4 +1,5 @@
 import Head from "next/head";
+
 import { Destinations } from "../components/Destination";
 import { Explore } from "../components/Explore";
 import { Footer } from "../components/Footer";

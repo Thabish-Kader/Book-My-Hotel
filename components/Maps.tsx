@@ -1,54 +1,32 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
 	GoogleMap,
 	useLoadScript,
 	Marker,
 	InfoWindow,
 } from "@react-google-maps/api";
+import { Context } from "../pages/results";
 
-type Props = {
-	locationResults: LocationInfo[];
-};
-
-// const markers = [
-// 	{
-// 		id: 1,
-// 		name: "Chicago, Illinois",
-// 		position: { lat: 41.881832, lng: -87.623177 },
-// 	},
-// 	{
-// 		id: 2,
-// 		name: "Denver, Colorado",
-// 		position: { lat: 39.739235, lng: -104.99025 },
-// 	},
-// 	{
-// 		id: 3,
-// 		name: "Los Angeles, California",
-// 		position: { lat: 34.052235, lng: -118.243683 },
-// 	},
-// 	{
-// 		id: 4,
-// 		name: "New York, New York",
-// 		position: { lat: 40.712776, lng: -74.005974 },
-// 	},
-// ];
-
-export const Maps = ({ locationResults }: Props) => {
+export const Maps = () => {
 	const { isLoaded } = useLoadScript({
 		googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY as string,
 	});
 
 	if (!isLoaded) return <p>Loading...</p>;
-	return <Map locationResults={locationResults} />;
+	return <Map />;
 };
 
-function Map({ locationResults }: Props) {
-	const markers = locationResults?.map((location, i) => ({
+function Map() {
+	const context = useContext(Context);
+
+	// console.log(context);
+	// transforming the array to match the code from https://codesandbox.io/s/react-google-mapsapi-multiple-markers-infowindow-h6vlq?file=/src/Map.js:114-544
+	const markers = context?.map((location, i) => ({
 		id: i,
 		name: location.title,
 		position: { lat: location.lat, lng: location.long },
 	}));
-	console.log(markers);
+
 	const [activeMarker, setActiveMarker] = useState(null);
 
 	const handleActiveMarker = (marker: any) => {
