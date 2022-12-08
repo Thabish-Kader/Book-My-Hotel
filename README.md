@@ -1,6 +1,6 @@
 # Book-my-travel
 
-## Next Js, Date-Range, Google Maps API
+## Next Js, Date-Range, Google Maps API, Context API
 
 A project to learn the concepts of google maps api, date-range and context api
 
@@ -21,3 +21,18 @@ A project to learn the concepts of google maps api, date-range and context api
 -   [Google Maps Codebox](https://codesandbox.io/s/react-google-mapsapi-multiple-markers-infowindow-h6vlq?file=/src/Map.js:114-544)
 
 -   [Bar Of Progress](https://www.npmjs.com/package/@badrap/bar-of-progress)
+
+### Screenshots
+
+<img width="1680" alt="Screen Shot 2022-12-07 at 6 36 59 PM" src="https://user-images.githubusercontent.com/76642519/206356976-c7bfdd6d-57d4-44ea-a367-73af983c8365.png">
+
+<img width="1680" alt="Screen Shot 2022-12-07 at 6 37 19 PM" src="https://user-images.githubusercontent.com/76642519/206356988-c42b63a4-e67f-4baf-88a4-5ddeb288473a.png">
+
+<img width="1680" alt="Screen Shot 2022-12-07 at 6 37 42 PM" src="https://user-images.githubusercontent.com/76642519/206356996-704173de-101d-47bc-8695-bf4942657dbe.png">
+
+<img width="1680" alt="Screen Shot 2022-12-07 at 6 37 58 PM" src="https://user-images.githubusercontent.com/76642519/206357114-eb837feb-57a1-427d-9424-1df2bc5c3d65.png">
+
+<img width="1680" alt="Screen Shot 2022-12-07 at 6 38 14 PM" src="https://user-images.githubusercontent.com/76642519/206357143-dda98783-afe4-4f25-8fe8-b9c5e0ed05c8.png">
+
+<img width="1680" alt="Screen Shot 2022-12-07 at 6 38 43 PM" src="https://user-images.githubusercontent.com/76642519/206357166-b4052e53-aef8-4cf9-a1d8-0426d2022ab5.png">
+
