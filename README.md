@@ -1,5 +1,7 @@
 # Book-my-travel
 
+## Next Js, Typescript, Tailwind CSS
+
 ### Problems Faced
 
 -   At the time of implementaion of the map componenet i quickly realized that i began prop drilling in order to tackle this i implemented the Context hook from react.
